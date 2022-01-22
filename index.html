@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMAA - Home</title>
+    <script src="https://kit.fontawesome.com/e435d3a58e.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="search-overlay">
+        <button class="search-close close-menu-btn">
+            <i class="fas fa-align-justify fa-times"></i>
+        </button>
+        <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="video-overlay">
+        <div class="navbar-btn">
+            <button class="video-close close-menu-btn">
+                <i class="fas fa-align-justify fa-times"></i>
+            </button>
+        </div>
+        <div class="video" style="width: 100%; height: 100%;">
+            
+        </div>
+    </div>
+    <div class="mobile-overlay">
+        <div class="navbar-btn">
+            <button class="menu-close close-menu-btn">
+                <i class="fas fa-align-justify fa-times"></i>
+            </button>
+        </div>
+    </div>
+    <section class="mobile-menu px-4">
+        <div class="mobile-search d-flex justify-content-center my-3">
+            <div class="search-option search-switch">
+                <img src="data:image/webp;base64,UklGRugAAABXRUJQVlA4TNsAAAAvGoAGENegoG0bxvxJ7w/D/M8/QbYt/glWsgGKwugQLAYACJ/tp38RHNa2mzYyJMUw+u2/aS2pNEBE/xW2bdvETvdQe4ZUird5h/nZiKvQozVnJ9MJR3fN+bEBNy/LVTHkBTpr9mRLYmiAq8VQkpiaOIO6yKDT9IVHTXDnEE8daw2w0LmRIFYAB1c3BLK+4Cex8HAzQNL/4MaVUgO0b3QPBkWwuNVd90Uy9Ga20Nl4YzAh7Id1cD5f8PGyA5zJ/IuCoS4Xx+GxAVCGJJI8i8Sccw2i7erPvcv7PiYA"
+                    alt="">
+            </div>
+        </div>
+        <div class="mobile-logo">
+            <a href="./index.html">
+                <img src="data:image/webp;base64,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"
+                    alt=""></a>
+        </div>
+        <div class="mobile-nav">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        menu
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Player</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link">Shop</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Pages
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a href="#" class="dropdown-item">Watches</a></li>
+                                    <li><a href="#" class="dropdown-item">Cart</a></li>
+                                    <li><a href="#" class="dropdown-item">Checkout</a></li>
+                                    <li><a href="#" class="dropdown-item">wishlist</a></li>
+                                    <li><a href="#" class="dropdown-item">Product Details</a>
+                                    </li>
+                                    <li><a href="#" class="dropdown-item">Blog Details</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Blog</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="mobile-widgets">
+            <div>
+                <h6 class="h6">JOIN OUR TEAM</h6>
+                <p>Suport@basketball.com</p>
+            </div>
+            <div>
+                <h6 class="h6">Contact us</h6>
+                <p>Suport@basketball.com</p>
+            </div>
+            <div>
+                <h6 class="h6">MY CART</h6>
+                <p>( 2 items ) $ 285.0</p>
+            </div>
+        </div>
+    </section>
+    <header>
+        <div class="header-top container-fluid">
+            <div class="d-flex container">
+                <ul class="mt-2 mb-2 p-0 d-flex flex-row col-lg-7 justify-content-end offset-lg-5">
+                    <li class="d-flex flex-row my-2 me-xl-4">
+                        <div class="text-end">
+                            <h6>Join our team</h6>
+                            <p>Ourteam@basketball.com</p>
+                        </div>
+                        <div class="ms-4">
+                            <img src="data:image/webp;base64,UklGRhYBAABXRUJQVlA4TAoBAAAvGUAHEL+goG0bxjtAxh/kSgNB27Zxxp/jmbwK2raRkvthHH+SMQhJSm/wCPnLpFAGF8EH1L1vnhdd6NBkR0r871qrNQGWkKoYLxNhCBGp9U8AMbZtpdV5SmAjL49I/7Xei3wpIKL/EyBJDeAptwE8dQj7Dh7sO5yROCld29175P62YMIdjWIK7VpiHqZpgHRNeQFYsk5NrJIUyudTgiStTE7oVHO20oOU3zMtXAmN+T0CNci+eu/9bRQqbpa7YB1lb45OTCkdxNn58nHswYevCQvRfHvvXmQJRh+KwTWFr5yR3UspTWZn9AKbp8OV4Am8YRgeBnTJ3jPWWut4z9n/qnfoF6F3aNzeAA=="
+                                alt="">
+                        </div>
+                    </li>
+                    <li class="d-flex flex-row my-2 mx-xl-4">
+                        <div class="text-end">
+                            <h6 class="h6">Contact us</h6>
+                            <p>Suport@basketball.com</p>
+                        </div>
+                        <div class="ms-4">
+                            <img src="data:image/webp;base64,UklGRtIAAABXRUJQVlA4TMYAAAAvHUAHELeAoG3beNuBnD/J0EDQtm2c8ed4Jq+Ctm0kb/fCOP4grwYBIDmDEPKXWaENmqDA/PfI5UODUiR0Gvb/r1hzIxZQmVLzqiYxoCJtDq5k200bQfgZwvvfax1Jpf+I/k/AirdueDu98V8M++MQc+LxjGF95JhISzeaJ5fCqR4+D/PJnuCPkQRzEs8C5+IhUbOQK/b79ubQ4mu3Ahnt0tAEexZty8sAHGoWsvIO3BS+VOSZwntgFYrmC7gpfkWe6R2rUCg="
+                                alt="">
+                        </div>
+                    </li>
+                    <li class="d-flex flex-row my-2 ms-xl-4">
+                        <div class="text-end">
+                            <h6>My cart</h6>
+                            <p>( 2 items ) <span>$ 285.0</span></p>
+                        </div>
+                        <div class="ms-4">
+                            <img src="data:image/webp;base64,UklGRhYBAABXRUJQVlA4TAoBAAAvGUAHEL+goG0bxjtAxh/kSgNB27Zxxp/jmbwK2raRkvthHH+SMQhJSm/wCPnLpFAGF8EH1L1vnhdd6NBkR0r871qrNQGWkKoYLxNhCBGp9U8AMbZtpdV5SmAjL49I/7Xei3wpIKL/EyBJDeAptwE8dQj7Dh7sO5yROCld29175P62YMIdjWIK7VpiHqZpgHRNeQFYsk5NrJIUyudTgiStTE7oVHO20oOU3zMtXAmN+T0CNci+eu/9bRQqbpa7YB1lb45OTCkdxNn58nHswYevCQvRfHvvXmQJRh+KwTWFr5yR3UspTWZn9AKbp8OV4Am8YRgeBnTJ3jPWWut4z9n/qnfoF6F3aNzeAA=="
+                                alt="">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="header-bottom container-fluid">
+            <div class="d-flex container">
+                <div class="col-lg-4 p-0">
+                    <div class="header__logo">
+                        <a href="./index.html"><img
+                                src="data:image/webp;base64,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"
+                                alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="header-bottom-nav d-flex flex-row justify-content-end">
+                        <nav class="navbar navbar-expand-lg p-0 col-10  me-lg-4">
+                            <ul class="container-fluid">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">About</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Player</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Shop</a>
+                                </li>
+                                <li class="nav-item dropdown" id="pages">
+                                    <a href="#" class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+                                        role="button" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <li><a href="#" class="dropdown-item">Watches</a></li>
+                                        <li><a href="#" class="dropdown-item">Cart</a></li>
+                                        <li><a href="#" class="dropdown-item">Checkout</a></li>
+                                        <li><a href="#" class="dropdown-item">wishlist</a></li>
+                                        <li><a href="#" class="dropdown-item">Product Details</a>
+                                        </li>
+                                        <li><a href="#" class="dropdown-item">Blog Details</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Blog</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Contact</a>
+                                </li>
+                            </ul>
+
+                        </nav>
+                        <div class="search-option search-switch">
+                            <img src="data:image/webp;base64,UklGRugAAABXRUJQVlA4TNsAAAAvGoAGENegoG0bxvxJ7w/D/M8/QbYt/glWsgGKwugQLAYACJ/tp38RHNa2mzYyJMUw+u2/aS2pNEBE/xW2bdvETvdQe4ZUird5h/nZiKvQozVnJ9MJR3fN+bEBNy/LVTHkBTpr9mRLYmiAq8VQkpiaOIO6yKDT9IVHTXDnEE8daw2w0LmRIFYAB1c3BLK+4Cex8HAzQNL/4MaVUgO0b3QPBkWwuNVd90Uy9Ga20Nl4YzAh7Id1cD5f8PGyA5zJ/IuCoS4Xx+GxAVCGJJI8i8Sccw2i7erPvcv7PiYA"
+                                alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="menu-btn">
+                <i class="fas fa-align-justify"></i>
+            </button>
+        </div>
+
+    </header>
+
+    <section class="hero-slider">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-10">
+                    <div class="hero-text">
+                        <div class="label">Jun 30, 2020 / 8:00 pm / New York</div>
+                        <h2>National leagues 2020 sesion begins</h2>
+                        <div class="hero-countdown" id="countdown">
+                            <div class="cd-item">
+                                <h3><span>30</span></h3>
+                                <p>Days</p>
+                            </div>
+                            <div class="cd-item">
+                                <h3><span>05</span></h3>
+                                <p>Hours</p>
+                            </div>
+                            <div class="cd-item">
+                                <h3><span>10</span></h3>
+                                <p>Minutes</p>
+                            </div>
+                            <div class="cd-item">
+                                <h3><span>20</span></h3>
+                                <p>Seconds</p>
+                            </div>
+                        </div>
+                        <a href="#" class="primary-btn btn">Book tickets</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="owl-nav">
+            <button type="button" role="presentation" class="owl-prev">
+                <i class="fa fa-angle-left"><i></i></i>
+            </button>
+            <button type="button" role="presentation" class="owl-next">
+                <i class="fa fa-angle-right"><i></i></i>
+            </button>
+        </div>
+        <div class="owl-dots">
+            <button role="button" class="owl-dot active">
+                <span></span></button><button role="button" class="owl-dot"><span></span>
+            </button>
+        </div>
+    </section>
+
+    <section class="latest-result spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 p-0">
+                    <div class="section-title">
+                        <h2><i class="fa fa-bolt"></i> Latest results</h2>
+                    </div>
+                    <div class="latest-result-table">
+                        <table class="table table-dark table-striped">
+                            <tbody>
+                                <tr>
+                                    <td class="m-date">May 05, 2020</td>
+                                    <td></td>
+                                    <td class="m-vanue">Chicago</td>
+                                </tr>
+                                <tr>
+                                    <td class="m-team">Jinotega</td>
+                                    <td class="m-time">54:85</td>
+                                    <td class="m-team">Toronto raptors</td>
+                                </tr>
+                                <tr>
+                                    <td class="m-date">May 05, 2020</td>
+                                    <td></td>
+                                    <td class="m-vanue">Chicago</td>
+                                </tr>
+                                <tr>
+                                    <td class="m-team">San Isidro</td>
+                                    <td class="m-time">78:65</td>
+                                    <td class="m-team">Brooklyn Nets</td>
+                                </tr>
+                                <tr>
+                                    <td class="m-date">May 05, 2020</td>
+                                    <td></td>
+                                    <td class="m-vanue">Chicago</td>
+                                </tr>
+                                <tr>
+                                    <td class="m-team">Costa Caribe</td>
+                                    <td class="m-time">119:86</td>
+                                    <td class="m-team">Miani Heat</td>
+                                </tr>
+                                <tr>
+                                    <td class="m-date">May 05, 2020</td>
+                                    <td></td>
+                                    <td class="m-vanue">Chicago</td>
+                                </tr>
+                                <tr>
+                                    <td class="m-team">Utah Jazz</td>
+                                    <td class="m-time">68:95</td>
+                                    <td class="m-team">Phoenix Suns</td>
+                                </tr>
+                                <tr>
+                                    <td class="m-date">May 05, 2020</td>
+                                    <td></td>
+                                    <td class="m-vanue">Chicago</td>
+                                </tr>
+                                <tr>
+                                    <td class="m-team">Detroit Pistons</td>
+                                    <td class="m-time">88:57</td>
+                                    <td class="m-team">DallasMavericks</td>
+                                </tr>
+                                <tr>
+                                    <td class="m-date">May 05, 2020</td>
+                                    <td></td>
+                                    <td class="m-vanue">Chicago</td>
+                                </tr>
+                                <tr>
+                                    <td class="m-team">Chicago Bulls</td>
+                                    <td class="m-time">66:65</td>
+                                    <td class="m-team">Denver Nuggets</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-lg-8 p-0">
+                    <div class="section-title text-lg-center">
+                        <h2><i class="fa fa-bolt"></i> Today’s basketball matches</h2>
+                    </div>
+                    <div class="latest-match set-bg row-lg"
+                        data-setbg="https://preview.colorlib.com/theme/thebasketball/img/latest-result/match-bg.jpg.webp"
+                        style="background-image: url('https://preview.colorlib.com/theme/thebasketball/img/latest-result/match-bg.jpg.webp');">
+                        <div class="latest-first-team">
+                            <img src="https://preview.colorlib.com/theme/thebasketball/img/latest-result/xteam-1.png.pagespeed.ic.MnqMqwfhdO.webp"
+                                alt="">
+                            <h4>Costa Caribe</h4>
+                        </div>
+                        <div class="latest-second-team">
+                            <img src="https://preview.colorlib.com/theme/thebasketball/img/latest-result/xteam-2.png.pagespeed.ic.VpNpa6siR0.webp"
+                                alt="">
+                            <h4>Brooklyn nets</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="team spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 col-md-7">
+                    <div class="section-title text-start">
+                        <h2 class="text-light"><i class="fa fa-bolt"></i> Fisrt team</h2>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-5">
+                    <div class="team-btn">
+                        <a href="#" class="btn text-light btn-outline-danger btn-lg text-uppercase">Join our team</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="player__item mb-5">
+                        <div class="player-item-pic set-bg" data-setbg="img/player/player-1.jpg"
+                            style="background-image: url('https://preview.colorlib.com/theme/thebasketball/img/player/player-1.jpg.webp');">
+                            <div class="number"><span>01</span></div>
+                        </div>
+                        <div class="player-item-text">
+                            <h4>Grace Osborne</h4>
+                            <span>Center</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="player__item">
+                        <div class="player-item-pic set-bg" data-setbg="img/player/player-2.jpg"
+                            style="background-image: url('https://preview.colorlib.com/theme/thebasketball/img/player/player-2.jpg.webp');">
+                            <div class="number"><span>83</span></div>
+                        </div>
+                        <div class="player-item-text">
+                            <h4>Frances Matthews</h4>
+                            <span>Point guard</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="player__item">
+                        <div class="player-item-pic set-bg" data-setbg="img/player/player-3.jpg"
+                            style="background-image: url('https://preview.colorlib.com/theme/thebasketball/img/player/player-3.jpg.webp');">
+                            <div class="number"><span>36</span></div>
+                        </div>
+                        <div class="player-item-text">
+                            <h4>Florence Munoz</h4>
+                            <span>Shooting guard</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="player__item">
+                        <div class="player-item-pic set-bg" data-setbg="img/player/player-4.jpg"
+                            style="background-image: url('https://preview.colorlib.com/theme/thebasketball/img/player/player-4.jpg.webp');">
+                            <div class="number"><span>50</span></div>
+                        </div>
+                        <div class="player-item-text">
+                            <h4>Victoria Lawrence</h4>
+                            <span>Power forward</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="statistics spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="statistics__player__content">
+                        <div class="section-title">
+                            <h2><i class="fa fa-bolt"></i> Player statistics</h2>
+                        </div>
+                        <div class="statistics-player-tab">
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" data-toggle="tab" href="#tabs-1"
+                                        role="tab">Golkeepers</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab">Defeners</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab">Midfielders</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="tab" href="#tabs-4" role="tab">Attackers</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="tabs-1" role="tabpanel">
+                                    <div class="owl-item cloned">
+                                        <div class="statistics-player-slider-item set-bg"
+                                            data-setbg="img/statistics/player-1.jpg"
+                                            style="background-image: url('https://preview.colorlib.com/theme/thebasketball/img/statistics/player-1.jpg.webp');">
+                                            <div class="statistics-player-slider-item-text">
+                                                <h3>95.5 point</h3>
+                                                <h2>Nathaniel Murphy</h2>
+                                                <a href="#"
+                                                    class="text-light btn btn-outline-danger btn-lg text-uppercase">View
+                                                    portfolio</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="owl-dots">
+                                <button role="button" class="owl-dot active">
+                                    <span></span></button><button role="button" class="owl-dot"><span></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 ps-xl-3 pe-1">
+                    <div class="statistics__league__point">
+                        <div class="section-title">
+                            <h2><i class="fa fa-bolt"></i> League table</h2>
+                        </div>
+                        <ul class="p-0">
+                            <li style="margin-bottom: 19px;">
+                                <div class="h-pos">Pos</div>
+                                <div class="h-team">Team</div>
+                                <div class="h-win">W</div>
+                                <div class="h-lose">L</div>
+                                <div class="h-point">Ptt</div>
+                                <div class="h-percent">%</div>
+                            </li>
+                            <li>
+                                <span class="l-pos">1</span>
+                                <div class="l-point-item">
+                                    <span class="l-team">Florence Munoz</span>
+                                    <span class="l-win">14</span>
+                                    <span class="l-lose">1</span>
+                                    <span class="l-point">28</span>
+                                    <span class="l-percent">93</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="l-pos">2</span>
+                                <div class="l-point-item">
+                                    <span class="l-team">Victoria Lawrence</span>
+                                    <span class="l-win">14</span>
+                                    <span class="l-lose">1</span>
+                                    <span class="l-point">28</span>
+                                    <span class="l-percent">93</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="l-pos">3</span>
+                                <div class="l-point-item">
+                                    <span class="l-team">Frances Matthews</span>
+                                    <span class="l-win">14</span>
+                                    <span class="l-lose">1</span>
+                                    <span class="l-point">28</span>
+                                    <span class="l-percent">93</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="l-pos">4</span>
+                                <div class="l-point-item">
+                                    <span class="l-team">George Chambers</span>
+                                    <span class="l-win">14</span>
+                                    <span class="l-lose">1</span>
+                                    <span class="l-point">28</span>
+                                    <span class="l-percent">93</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="l-pos">5</span>
+                                <div class="l-point-item">
+                                    <span class="l-team">Nathaniel Murphy</span>
+                                    <span class="l-win">14</span>
+                                    <span class="l-lose">1</span>
+                                    <span class="l-point">28</span>
+                                    <span class="l-percent">93</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="l-pos">6</span>
+                                <div class="l-point-item">
+                                    <span class="l-team">Tony Jordan</span>
+                                    <span class="l-win">14</span>
+                                    <span class="l-lose">1</span>
+                                    <span class="l-point">28</span>
+                                    <span class="l-percent">93</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="latest-videos" style="padding-bottom: 100px;">
+        <div class="container-fluid overflow-hidden">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="section-title">
+                        <h2><i class="fa fa-bolt"></i> LATEST VIDEOS</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid">
+                <!-- <div class="col-4"></div> -->
+                <div class="slide-container">
+                    <div class="slides">
+                        <div class="slide"
+                            style="background: url('https://preview.colorlib.com/theme/thebasketball/img/lv-slider/lv-1.jpg.webp');">
+                            <!-- <img src="https://preview.colorlib.com/theme/thebasketball/img/lv-slider/lv-1.jpg.webp" alt="" /> -->
+                            <!-- <div class="slide-content">
+                                <h1>This is Heading</h1>
+                            </div> -->
+                            <a onclick="playVideo(1)" href="#" class="play-btn video-popup"><i
+                                    class="fa fa-play"></i></a>
+                            <div class="video__title">
+                                <h4>Is basketball trending to become America’s favorite sport? | Jalen &amp; Jacoby</h4>
+                            </div>
+                        </div>
+                        <div class="slide"
+                            style="background: url('https://preview.colorlib.com/theme/thebasketball/img/lv-slider/lv-2.jpg.webp');">
+                            <!-- <img src="https://preview.colorlib.com/theme/thebasketball/img/lv-slider/lv-2.jpg.webp" alt="" /> -->
+                            <a onclick="playVideo(2)" href="#" class="play-btn video-popup"><i
+                                    class="fa fa-play"></i></a>
+                            <div class="video__title">
+                                <h4>Is basketball trending to become America’s favorite sport? | Jalen &amp; Jacoby</h4>
+                            </div>
+
+                        </div>
+                        <div class="slide"
+                            style="background: url('https://preview.colorlib.com/theme/thebasketball/img/lv-slider/lv-3.jpg.webp');">
+                            <!-- <img src="https://preview.colorlib.com/theme/thebasketball/img/lv-slider/lv-3.jpg.webp" alt="" /> -->
+                            <a onclick="playVideo(3)" href="#" class="play-btn video-popup"><i
+                                    class="fa fa-play"></i></a>
+                            <div class="video__title">
+                                <h4>Is basketball trending to become America’s favorite sport? | Jalen &amp; Jacoby</h4>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="col-4"></div> -->
+            </div>
+            <div class="slide-controls">
+                <button id="prev-btn">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button id="next-btn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="callto spad set-bg"
+        data-setbg="'https://preview.colorlib.com/theme/thebasketball/img/call-bg.jpg.webp'"
+        style="background-image: url('https://preview.colorlib.com/theme/thebasketball/img/call-bg.jpg.webp'); margin-bottom: -1px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="callto__text">
+                        <span>Join our team</span>
+                        <h2>JOIN OUR FAN CLUB AND GET FREE TICKET</h2>
+                        <a href="#" class="primary-btn white-btn">Resgister</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-8">
+                    <div class="footer__widget">
+                        <h5>Get in touch</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+                        <ul class="p-0">
+                            <li>
+                                <div class="icon">
+                                    <i class="fa fa-map-marker"></i>
+                                </div>
+                                <div class="footer__widget__item"><span>Address:</span> 92-94 High St, Oxford OX1 4BJ,
+                                    England</div>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <i class="fa fa-phone"></i>
+                                </div>
+                                <div class="footer__widget__item"><span>Phone:</span> + 44 1865 799599; + 44 1956 799599
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <i class="fa fa-envelope"></i>
+                                </div>
+                                <div class="footer__widget__item"><span>Email:</span> Basketball.support@gmail.com</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer__widget">
+                        <h5>Latest news</h5>
+                        <a href="#" class="footer__widget__latest">
+                            <div class="footer__widget__latest__pic">
+                                <img src="https://preview.colorlib.com/theme/thebasketball/img/blog/xfl-1.jpg.pagespeed.ic.T6fj1wt_7M.webp"
+                                    alt="">
+                            </div>
+                            <div class="footer__widget__latest__text">
+                                <h5>Wirecard Partners with FC Bayern Munich Basketball</h5>
+                                <span>Jun 03, 2020</span>
+                            </div>
+                        </a>
+                        <a href="#" class="footer__widget__latest mb-0">
+                            <div class="footer__widget__latest__pic">
+                                <img src="https://preview.colorlib.com/theme/thebasketball/img/blog/xfl-2.jpg.pagespeed.ic.LswmJUy7Bn.webp"
+                                    alt="">
+                            </div>
+                            <div class="footer__widget__latest__text">
+                                <h5>Patrick Beverley says basketball is “not important” right now</h5>
+                                <span>Jun 03, 2020</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer__widget">
+                        <h5>SUBSCRIBE NEWLETTER</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore.</p>
+                        <form action="#">
+                            <input type="text" placeholder="Email">
+                            <button type="submit" class="site-btn">SUBSCRIBE</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer__copyright">
+                        <div class="row">
+                            <div class="col-lg-8 text-white">
+                                Copyright ©
+                                <script>document.write(new Date().getFullYear());</script> All rights reserved |
+                                This template is made with <i class="fa fa-heart color-danger" aria-hidden="true"></i>
+                                by <a href="#" target="_blank" rel="nofollow noopener" class="text-white">DigiMatrix</a>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="footer__copyright__links">
+                                    <a href="#"><i class="fa fa-facebook"></i></a>
+                                    <a href="#"><i class="fa fa-twitter"></i></a>
+                                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                                    <a href="#"><i class="fa fa-instagram"></i></a>
+                                    <a href="#"><i class="fa fa-youtube-play"></i></a>
+                                    <a href="#"><i class="fa fa-500px"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
