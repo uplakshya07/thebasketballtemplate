@@ -37,9 +37,9 @@ searchClose.addEventListener("click", () => {
 
 
 let videoSrc = [
-  'https://www.youtube-nocookie.com/embed/MJblFudSExU?autoplay=1&mute=1',
-  'https://www.youtube-nocookie.com/embed/MJblFudSExU?autoplay=1&mute=1',
-  'https://www.youtube-nocookie.com/embed/MJblFudSExU?autoplay=1&mute=1'
+  'https://www.youtube-nocookie.com/embed/MJblFudSExU',
+  'https://www.youtube-nocookie.com/embed/MJblFudSExU',
+  'https://www.youtube-nocookie.com/embed/MJblFudSExU'
 ];
 const videoOverlay = getElement(".video-overlay");
 const closeVideo = getElement(".video-close");
@@ -47,7 +47,7 @@ const video = getElement(".video");
 const playBtn = document.querySelectorAll(".play-btn");
 
 function playVideo(vidNum) {
-  video.innerHTML = `<iframe src=${videoSrc[vidNum-1]}  allowfullscreen></iframe>`;
+  video.innerHTML = `<iframe src=${videoSrc[vidNum-1]}></iframe>`;
 };
 playBtn.forEach((item) => {
   item.addEventListener("click", () => {
